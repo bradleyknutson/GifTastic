@@ -1,8 +1,14 @@
 .gif {
     width: 100%;
-    margin-top: 50px;
 }
 
-img{
-    width: 100%;
+video{
+    /* width: 100%; */
+}
+
+.card {
+    padding: 0;
+    margin-bottom: 20px;
+    background-color: black;
+    color: white;
 }
