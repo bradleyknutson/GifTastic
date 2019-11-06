@@ -28,7 +28,7 @@ var gifTastic = {
                 newGif.attr('src', giphy.images.original_mp4.mp4);
                 newGif.attr('type', 'video/mp4');
                 // newGif.data('animated', 'off');
-                newCardDiv.append($('<div class=card-header>').text(giphy.title + " || Rating: " + giphy.rating));
+                newCardDiv.append($('<div class=card-header>').text(giphy.title + " || Rated " + giphy.rating.toUpperCase()));
                 var newGifDiv = $("<div class=card-body>");
                 newGifDiv.append(newGif);
                 newCardDiv.append(newGifDiv);
