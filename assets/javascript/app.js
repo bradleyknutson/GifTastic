@@ -54,10 +54,6 @@ var gifTastic = {
     },
 }
 
-
-
-
-
 $(document).ready(function () {
     gifTastic.addButtons();
     $('#addButton').on('click', gifTastic.addNewButton);
