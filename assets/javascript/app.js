@@ -40,7 +40,7 @@ var gifTastic = {
     buildQueryUrl: function(searchTerm, offset){
         gifTastic.queryUrl = '';
         var apiKey = 'TJxF5Z9s3iaJVlJ1fV2pSiby7iqKQw3L';
-        var gifUrl = 'http://api.giphy.com/v1/gifs/search';
+        var gifUrl = 'https://api.giphy.com/v1/gifs/search';
         searchTerm = searchTerm.replace(' ', '+');
         gifTastic.queryUrl += gifUrl + "?q=" + searchTerm + "&offset=" + offset + "&limit=10&api_key=" + apiKey;
     },
