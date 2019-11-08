@@ -1,14 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #343a40;
+}
+
 .gif {
     width: 100%;
 }
 
-video{
-    /* width: 100%; */
-}
 
 .card {
-    padding: 0;
+    padding: 10px;
     margin-bottom: 20px;
     background-color: black;
     color: white;
+}
+
+#favorites {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+button{
+    margin: 10px;
 }

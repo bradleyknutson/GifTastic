@@ -4,7 +4,7 @@ var gifTastic = {
     addButtons: function(){
         $('#buttonSection').empty();
         this.topics.forEach(topic => {
-            var topicButton = $('<button>');
+            var topicButton = $('<button class="btn btn-dark">');
             topicButton.data("topic", topic);
             topicButton.data('offset', 0);
             topicButton.addClass('topics');
@@ -20,19 +20,33 @@ var gifTastic = {
             url: gifTastic.queryUrl
         }).then(function(response){
             console.log(response);
-            var newGifSection = $('<div>');
-            newGifSection.addClass('row')
+            var newGifSection = $('<div class=row>');
+            var leftSide = true;
             response.data.forEach(giphy => {
-                var newCardDiv = $('<div class="col-lg-12 card">');
-                var newGif = $('<video controls loop class=gif>');
-                newGif.attr('src', giphy.images.original_mp4.mp4);
-                newGif.attr('type', 'video/mp4');
-                // newGif.data('animated', 'off');
-                newCardDiv.append($('<div class=card-header>').text(giphy.title + " || Rated " + giphy.rating.toUpperCase()));
-                var newGifDiv = $("<div class=card-body>");
-                newGifDiv.append(newGif);
-                newCardDiv.append(newGifDiv);
-                newGifSection.append(newCardDiv);
+                if(leftSide === true){
+                    var newCardDiv = $('<div class="col-lg-5 card">');
+                    var newGif = $('<video controls loop class=gif>');
+                    newGif.attr('src', giphy.images.original_mp4.mp4);
+                    newGif.attr('type', 'video/mp4');
+                    newCardDiv.append($('<div class=card-header>').text(giphy.title + " || Rated " + giphy.rating.toUpperCase()));
+                    var newGifDiv = $("<div class=card-body>");
+                    newGifDiv.append(newGif);
+                    newCardDiv.append(newGifDiv);
+                    newGifSection.append(newCardDiv);
+                    newGifSection.append($('<div class=col-lg-2>'));
+                    leftSide = false;
+                }else{
+                    var newCardDiv = $('<div class="col-lg-5 card">');
+                    var newGif = $('<video controls loop class=gif>');
+                    newGif.attr('src', giphy.images.original_mp4.mp4);
+                    newGif.attr('type', 'video/mp4');
+                    newCardDiv.append($('<div class=card-header>').text(giphy.title + " || Rated " + giphy.rating.toUpperCase()));
+                    var newGifDiv = $("<div class=card-body>");
+                    newGifDiv.append(newGif);
+                    newCardDiv.append(newGifDiv);
+                    newGifSection.append(newCardDiv);
+                    leftSide = true;
+                }
             });;
             $('#gifSection').prepend(newGifSection);
         });
