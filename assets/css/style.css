@@ -27,3 +27,7 @@ body{
 button{
     margin: 10px;
 }
+
+#addTopic{
+    color: white;
+}
